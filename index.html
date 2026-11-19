@@ -44,11 +44,23 @@
       <div class="panel-head"><div><div class="step">चरण 02 · AI रिपोर्ट</div><h2>आपकी फसल की स्वास्थ्य रिपोर्ट</h2></div><span style="font-size:25px">📋</span></div>
       <div class="empty" id="emptyState"><div class="empty-art">🪴</div><h3>आपकी रिपोर्ट यहाँ दिखाई देगी</h3><p>फोटो अपलोड करने के बाद AI पौधे की स्थिति, संभावित बीमारी और देखभाल के सुझाव तैयार करेगा।</p><div class="mini-steps"><span>① फोटो अपलोड</span><span>② AI जाँच</span><span>③ उपाय जानें</span></div></div>
       <div class="loading" id="loading"><div class="spinner"></div><h3>AI तस्वीर का विश्लेषण कर रहा है…</h3><p>पत्तियों के रंग, धब्बों और लक्षणों को देखा जा रहा है।</p></div>
-      <div class="report" id="report"><div class="report-top"><h3>विश्लेषण पूरा हुआ</h3><span class="pill">AI REPORT</span></div><div class="report-body" id="reportText"></div><div class="report-actions"><button class="secondary" id="copyBtn">रिपोर्ट कॉपी करें</button><button class="secondary" id="againBtn">नई जाँच</button></div></div>
+     <div class="report" id="report">
+  <div class="report-top">
+    <h3>विश्लेषण पूरा हुआ</h3>
+    <span class="pill">AI REPORT</span>
+  </div>
+
+  <div class="report-body" id="reportText"></div>
+
+  <div class="report-actions">
+  
+    <button class="secondary" id="copyBtn">रिपोर्ट कॉपी करें</button>
+    <button class="secondary" id="againBtn">नई जाँच</button>
+  </div>
+</div>
     </section>
   </div>
-  <button class="secondary" id="speakBtn">🔊 रिपोर्ट सुनें</button>
-<button class="secondary" id="stopSpeakBtn">⏹️ आवाज़ बंद करें</button>
+ 
   <div class="features">
     <div class="feature"><div class="ico">🔍</div><b>संभावित रोग की पहचान</b><p>फोटो में दिख रहे लक्षणों के आधार पर AI प्रारंभिक संकेत देता है।</p></div>
     <div class="feature"><div class="ico">🧑‍🌾</div><b>किसान के लिए सरल उपाय</b><p>सफाई, सिंचाई, देखभाल और रोकथाम के सुझाव आसान भाषा में।</p></div>
@@ -64,17 +76,16 @@ const API_URL = "https://harit-saathi-api.rajeshkumarmahra4.workers.dev";
 
 const photoInput=document.getElementById('photo'), dropzone=document.getElementById('dropzone'), preview=document.getElementById('preview'), analyzeBtn=document.getElementById('analyzeBtn');
 const emptyState=document.getElementById('emptyState'), loading=document.getElementById('loading'), report=document.getElementById('report'), reportText=document.getElementById('reportText');
-let selectedFile=null;
-  // हिंदी रिपोर्ट को आवाज़ में सुनाना
-document.getElementById('speakBtn').addEventListener('click',()=>{
+// हिंदी रिपोर्ट सुनाने की सुविधा
+document.getElementById('speakBtn').addEventListener('click', () => {
   const text = reportText.textContent.trim();
 
-  if(!text){
+  if (!text) {
     toast('पहले AI रिपोर्ट तैयार करें।');
     return;
   }
 
-  if(!('speechSynthesis' in window)){
+  if (!window.speechSynthesis) {
     toast('आपका ब्राउज़र आवाज़ की सुविधा नहीं देता।');
     return;
   }
@@ -82,27 +93,28 @@ document.getElementById('speakBtn').addEventListener('click',()=>{
   window.speechSynthesis.cancel();
 
   const speech = new SpeechSynthesisUtterance(text);
+  speech.lang = 'hi-IN';
+  speech.rate = 0.85;
+  speech.pitch = 1;
 
-const voices = window.speechSynthesis.getVoices();
-const hindiVoice = voices.find(v => v.lang.toLowerCase().startsWith('hi'));
+  const voices = window.speechSynthesis.getVoices();
+  const hindiVoice = voices.find(v => v.lang.toLowerCase().startsWith('hi'));
 
-if (hindiVoice) {
-  speech.voice = hindiVoice;
-}
+  if (hindiVoice) {
+    speech.voice = hindiVoice;
+  }
 
-speech.lang = 'hi-IN';
-speech.rate = 0.85;
-speech.pitch = 1;
-
-speech.onstart = () => console.log('आवाज़ शुरू हुई');
-speech.onerror = (e) => console.log('Voice error:', e.error);
-
-window.speechSynthesis.speak(speech);
+  speech.onerror = (event) => {
+    toast('आवाज़ में समस्या: ' + event.error);
+  };
 
   window.speechSynthesis.speak(speech);
 });
 
-document.getElementById('stopSpeakBtn').addEventListener('click',()=>{
+document.getElementById('stopSpeakBtn').addEventListener('click', () => {
+  window.speechSynthesis.cancel();
+  toast('आवाज़ बंद कर दी गई।');
+});
   window.speechSynthesis.cancel();
   toast('आवाज़ बंद कर दी गई।');
 });
