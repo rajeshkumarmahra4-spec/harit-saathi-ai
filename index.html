@@ -47,6 +47,8 @@
       <div class="report" id="report"><div class="report-top"><h3>विश्लेषण पूरा हुआ</h3><span class="pill">AI REPORT</span></div><div class="report-body" id="reportText"></div><div class="report-actions"><button class="secondary" id="copyBtn">रिपोर्ट कॉपी करें</button><button class="secondary" id="againBtn">नई जाँच</button></div></div>
     </section>
   </div>
+  <button class="secondary" id="speakBtn">🔊 रिपोर्ट सुनें</button>
+<button class="secondary" id="stopSpeakBtn">⏹️ आवाज़ बंद करें</button>
   <div class="features">
     <div class="feature"><div class="ico">🔍</div><b>संभावित रोग की पहचान</b><p>फोटो में दिख रहे लक्षणों के आधार पर AI प्रारंभिक संकेत देता है।</p></div>
     <div class="feature"><div class="ico">🧑‍🌾</div><b>किसान के लिए सरल उपाय</b><p>सफाई, सिंचाई, देखभाल और रोकथाम के सुझाव आसान भाषा में।</p></div>
@@ -63,6 +65,34 @@ const API_URL = "https://harit-saathi-api.rajeshkumarmahra4.workers.dev";
 const photoInput=document.getElementById('photo'), dropzone=document.getElementById('dropzone'), preview=document.getElementById('preview'), analyzeBtn=document.getElementById('analyzeBtn');
 const emptyState=document.getElementById('emptyState'), loading=document.getElementById('loading'), report=document.getElementById('report'), reportText=document.getElementById('reportText');
 let selectedFile=null;
+  // हिंदी रिपोर्ट को आवाज़ में सुनाना
+document.getElementById('speakBtn').addEventListener('click',()=>{
+  const text = reportText.textContent.trim();
+
+  if(!text){
+    toast('पहले AI रिपोर्ट तैयार करें।');
+    return;
+  }
+
+  if(!('speechSynthesis' in window)){
+    toast('आपका ब्राउज़र आवाज़ की सुविधा नहीं देता।');
+    return;
+  }
+
+  window.speechSynthesis.cancel();
+
+  const speech = new SpeechSynthesisUtterance(text);
+  speech.lang = 'hi-IN';
+  speech.rate = 0.9;
+  speech.pitch = 1;
+
+  window.speechSynthesis.speak(speech);
+});
+
+document.getElementById('stopSpeakBtn').addEventListener('click',()=>{
+  window.speechSynthesis.cancel();
+  toast('आवाज़ बंद कर दी गई।');
+});
 function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.style.display='block';setTimeout(()=>t.style.display='none',2800)}
 function setFile(file){if(!file)return;if(!['image/jpeg','image/png','image/webp'].includes(file.type)){toast('कृपया JPG, PNG या WEBP फोटो चुनें।');return}if(file.size>8*1024*1024){toast('फोटो 8 MB से छोटी होनी चाहिए।');return}selectedFile=file;preview.src=URL.createObjectURL(file);dropzone.classList.add('has-image');analyzeBtn.disabled=false}
 photoInput.addEventListener('change',e=>setFile(e.target.files[0]));
