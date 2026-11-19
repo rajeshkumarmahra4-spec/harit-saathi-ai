@@ -297,6 +297,7 @@ document.getElementById('speakBtn').addEventListener('click', () => {
 
   const speech = new SpeechSynthesisUtterance(text);
   speech.lang = 'hi-IN';
+  speech.voice = speechSynthesis.getVoices().find(v => v.lang === 'hi-IN') || null;
   speech.rate = 0.85;
   speech.pitch = 1;
 
