@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="hi">
 <head>
@@ -8,75 +9,277 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
 <style>
-:root{--forest:#123b2a;--green:#1e6845;--lime:#c8ef85;--mint:#eaf5e9;--paper:#f7faf5;--ink:#183328;--muted:#687b70;--line:#dce8dc;--white:#fff;--shadow:0 18px 55px #163d2812}
-*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:"DM Sans","Noto Sans Devanagari",sans-serif}button,input{font:inherit}.topbar{background:var(--forest);color:white;padding:15px max(22px,calc((100% - 1180px)/2));display:flex;align-items:center;justify-content:space-between;gap:15px}.brand{display:flex;align-items:center;gap:11px;font-weight:800;font-size:19px;letter-spacing:-.4px}.brand-mark{width:39px;height:39px;border-radius:13px;background:var(--lime);color:var(--forest);display:grid;place-items:center;font-size:22px}.top-right{font-size:12px;color:#d5e7da;display:flex;gap:9px;align-items:center}.live-dot{width:8px;height:8px;border-radius:50%;background:#a7e66e;box-shadow:0 0 0 4px #a7e66e22}.hero{background:linear-gradient(120deg,#123b2a 0%,#1b563a 65%,#2a704b 100%);color:white;padding:54px 22px 68px;position:relative;overflow:hidden}.hero:after{content:"";position:absolute;width:370px;height:370px;border:1px solid #ffffff17;border-radius:50%;right:8%;top:-190px;box-shadow:0 0 0 45px #ffffff08,0 0 0 90px #ffffff06}.hero-inner{max-width:1180px;margin:auto;position:relative;z-index:1}.eyebrow{display:inline-flex;gap:8px;align-items:center;color:var(--lime);font-size:12px;font-weight:800;letter-spacing:1.3px;text-transform:uppercase}.hero h1{font-size:clamp(32px,5vw,53px);line-height:1.12;letter-spacing:-1.8px;max-width:690px;margin:16px 0}.hero h1 span{color:var(--lime)}.hero p{color:#d4e6d9;max-width:620px;line-height:1.75;font-size:15px;margin:0}.hero-tags{display:flex;gap:9px;flex-wrap:wrap;margin-top:24px}.hero-tags span{border:1px solid #ffffff2c;background:#ffffff0d;padding:8px 12px;border-radius:99px;font-size:12px;color:#e4f0e7}.wrap{max-width:1180px;margin:-28px auto 0;padding:0 22px 55px;position:relative;z-index:2}.layout{display:grid;grid-template-columns: minmax(0,1.02fr) minmax(0,.98fr);gap:22px;align-items:start}.panel{background:white;border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);padding:24px}.panel-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:19px}.step{font-size:11px;font-weight:800;color:var(--green);letter-spacing:1px}.panel h2{font-size:21px;margin:5px 0 0;letter-spacing:-.5px}.sub{font-size:13px;color:var(--muted);line-height:1.6;margin:7px 0 0}.upload{border:1.7px dashed #b7cfb8;border-radius:18px;background:#f8fcf7;min-height:255px;display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;cursor:pointer;transition:.2s;position:relative;overflow:hidden}.upload:hover,.upload.drag{border-color:var(--green);background:#f0f8ed}.upload-content{pointer-events:none}.upload-icon{width:58px;height:58px;border-radius:18px;background:#e6f3df;color:var(--green);display:grid;place-items:center;font-size:27px;margin:0 auto 13px}.upload strong{display:block;font-size:15px}.upload small{display:block;color:var(--muted);margin-top:7px;line-height:1.5}.upload .choose{display:inline-block;margin-top:14px;background:var(--forest);color:white;border-radius:10px;padding:10px 16px;font-size:12px;font-weight:700}.preview{display:none;width:100%;max-height:280px;object-fit:contain;border-radius:12px}.upload.has-image{padding:10px;background:#f5faf3}.upload.has-image .upload-content{display:none}.upload.has-image .preview{display:block}.remove{display:none;position:absolute;top:17px;right:17px;border:0;background:#fff;color:#9c3d35;border-radius:9px;padding:8px 10px;cursor:pointer;font-size:12px;font-weight:700;box-shadow:0 3px 12px #0001}.upload.has-image .remove{display:block}.field{margin-top:17px}.field label{display:block;font-size:12px;font-weight:700;margin-bottom:8px}.field input{width:100%;border:1px solid var(--line);border-radius:11px;padding:12px 13px;outline:none;color:var(--ink);background:white}.field input:focus{border-color:#6eaa7c;box-shadow:0 0 0 3px #1e684515}.hint{font-size:11px;color:var(--muted);margin-top:7px}.primary{width:100%;margin-top:19px;border:0;border-radius:12px;background:var(--forest);color:white;padding:15px 18px;font-weight:800;cursor:pointer;display:flex;justify-content:center;align-items:center;gap:10px;transition:.2s}.primary:hover{background:#205a3b;transform:translateY(-1px)}.primary:disabled{opacity:.55;cursor:not-allowed;transform:none}.privacy{font-size:11px;color:var(--muted);text-align:center;margin:12px 0 0;line-height:1.5}.result-panel{min-height:510px}.empty{min-height:395px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:25px}.empty-art{width:118px;height:118px;border-radius:36px;background:linear-gradient(145deg,#eff8e9,#e0f0dc);display:grid;place-items:center;font-size:57px;margin-bottom:20px}.empty h3{font-size:18px;margin:0 0 8px}.empty p{max-width:310px;font-size:13px;line-height:1.7;color:var(--muted);margin:0}.mini-steps{display:flex;gap:10px;margin-top:22px;flex-wrap:wrap;justify-content:center}.mini-steps span{font-size:11px;background:#f1f6ef;border-radius:8px;padding:8px 10px;color:#54715d}.loading{display:none;text-align:center;padding:70px 20px}.spinner{width:43px;height:43px;border:4px solid #e4eee3;border-top-color:var(--green);border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 17px}@keyframes spin{to{transform:rotate(360deg)}}.loading h3{margin:0 0 7px}.loading p{color:var(--muted);font-size:13px}.report{display:none}.report-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px}.report-top h3{margin:0;font-size:18px}.pill{background:#e9f5e7;color:#27623d;padding:7px 10px;border-radius:99px;font-size:10px;font-weight:800}.report-body{white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.75;font-size:13px;color:#294537;background:#fbfdf9;border:1px solid #e7efe5;border-radius:14px;padding:17px;max-height:560px;overflow:auto}.report-actions{display:flex;gap:9px;margin-top:12px}.secondary{flex:1;background:white;border:1px solid var(--line);padding:11px;border-radius:10px;font-size:12px;font-weight:700;color:var(--forest);cursor:pointer}.notice{margin-top:22px;padding:14px 16px;border-radius:13px;background:#fff8e9;border:1px solid #f0e2bf;color:#725c2b;font-size:11px;line-height:1.6}.features{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}.feature{padding:18px;background:white;border:1px solid var(--line);border-radius:16px}.feature .ico{font-size:22px}.feature b{display:block;font-size:13px;margin:9px 0 5px}.feature p{font-size:11px;color:var(--muted);line-height:1.55;margin:0}.footer{text-align:center;color:#819187;font-size:11px;padding:0 20px 30px}.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#193e2d;color:white;padding:12px 17px;border-radius:10px;font-size:12px;display:none;z-index:5;box-shadow:var(--shadow)}@media(max-width:800px){.layout{grid-template-columns:1fr}.hero{padding-top:40px}.wrap{margin-top:-22px}.result-panel{min-height:400px}.empty{min-height:300px}}@media(max-width:520px){.panel{padding:18px}.features{grid-template-columns:1fr}.top-right .status-text{display:none}.hero h1{letter-spacing:-1px}.hero{padding-bottom:52px}}
+:root{--forest:#123b2a;--green:#1e6845;--lime:#c8ef85;--paper:#f7faf5;--ink:#183328;--muted:#687b70;--line:#dce8dc;--shadow:0 18px 55px #163d2812}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"DM Sans","Noto Sans Devanagari",sans-serif}
+button,input{font:inherit}
+.topbar{background:var(--forest);color:white;padding:15px max(22px,calc((100% - 1180px)/2));display:flex;align-items:center;justify-content:space-between;gap:15px}
+.brand{display:flex;align-items:center;gap:11px;font-weight:800;font-size:19px}
+.brand-mark{width:39px;height:39px;border-radius:13px;background:var(--lime);color:var(--forest);display:grid;place-items:center;font-size:22px}
+.top-right{font-size:12px;color:#d5e7da;display:flex;gap:9px;align-items:center}
+.live-dot{width:8px;height:8px;border-radius:50%;background:#a7e66e}
+.hero{background:linear-gradient(120deg,#123b2a,#1b563a 65%,#2a704b);color:white;padding:54px 22px 68px}
+.hero-inner{max-width:1180px;margin:auto}
+.eyebrow{color:var(--lime);font-size:12px;font-weight:800}
+.hero h1{font-size:clamp(32px,5vw,53px);line-height:1.12;max-width:690px;margin:16px 0}
+.hero h1 span{color:var(--lime)}
+.hero p{color:#d4e6d9;max-width:620px;line-height:1.75;font-size:15px}
+.hero-tags{display:flex;gap:9px;flex-wrap:wrap;margin-top:24px}
+.hero-tags span{border:1px solid #ffffff2c;padding:8px 12px;border-radius:99px;font-size:12px}
+.wrap{max-width:1180px;margin:-28px auto 0;padding:0 22px 55px;position:relative}
+.layout{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:start}
+.panel{background:white;border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);padding:24px}
+.panel-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:19px}
+.step{font-size:11px;font-weight:800;color:var(--green)}
+.panel h2{font-size:21px;margin:5px 0}
+.sub{font-size:13px;color:var(--muted);line-height:1.6}
+.upload{border:1.7px dashed #b7cfb8;border-radius:18px;background:#f8fcf7;min-height:255px;display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;cursor:pointer;position:relative;overflow:hidden}
+.upload:hover{border-color:var(--green);background:#f0f8ed}
+.upload-content{pointer-events:none}
+.upload-icon{width:58px;height:58px;border-radius:18px;background:#e6f3df;display:grid;place-items:center;font-size:27px;margin:0 auto 13px}
+.upload strong{display:block;font-size:15px}
+.upload small{display:block;color:var(--muted);margin-top:7px;line-height:1.5}
+.upload .choose{display:inline-block;margin-top:14px;background:var(--forest);color:white;border-radius:10px;padding:10px 16px;font-size:12px;font-weight:700}
+.preview{display:none;width:100%;max-height:280px;object-fit:contain;border-radius:12px}
+.upload.has-image{padding:10px}
+.upload.has-image .upload-content{display:none}
+.upload.has-image .preview{display:block}
+.remove{display:none;position:absolute;top:17px;right:17px;border:0;background:white;color:#9c3d35;border-radius:9px;padding:8px 10px;cursor:pointer}
+.upload.has-image .remove{display:block}
+.field{margin-top:17px}
+.field label{display:block;font-size:12px;font-weight:700;margin-bottom:8px}
+.field input{width:100%;border:1px solid var(--line);border-radius:11px;padding:12px}
+.hint{font-size:11px;color:var(--muted);margin-top:7px}
+.primary{width:100%;margin-top:19px;border:0;border-radius:12px;background:var(--forest);color:white;padding:15px;font-weight:800;cursor:pointer}
+.primary:disabled{opacity:.55;cursor:not-allowed}
+.privacy{font-size:11px;color:var(--muted);text-align:center;margin:12px 0;line-height:1.5}
+.result-panel{min-height:510px}
+.empty{min-height:395px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:25px}
+.empty-art{width:118px;height:118px;border-radius:36px;background:#eaf5e9;display:grid;place-items:center;font-size:57px;margin-bottom:20px}
+.empty p{max-width:310px;font-size:13px;line-height:1.7;color:var(--muted)}
+.mini-steps{display:flex;gap:10px;margin-top:22px;flex-wrap:wrap}
+.mini-steps span{font-size:11px;background:#f1f6ef;border-radius:8px;padding:8px}
+.loading{display:none;text-align:center;padding:70px 20px}
+.spinner{width:43px;height:43px;border:4px solid #e4eee3;border-top-color:var(--green);border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 17px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.loading p{color:var(--muted);font-size:13px}
+.report{display:none}
+.report-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.report-top h3{margin:0;font-size:18px}
+.pill{background:#e9f5e7;color:#27623d;padding:7px 10px;border-radius:99px;font-size:10px;font-weight:800}
+.report-body{white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.75;font-size:13px;color:#294537;background:#fbfdf9;border:1px solid #e7efe5;border-radius:14px;padding:17px;max-height:560px;overflow:auto}
+.report-actions{display:flex;gap:9px;margin-top:12px;flex-wrap:wrap}
+.secondary{flex:1;min-width:110px;background:white;border:1px solid var(--line);padding:11px;border-radius:10px;font-size:12px;font-weight:700;color:var(--forest);cursor:pointer}
+.notice{margin-top:22px;padding:14px 16px;border-radius:13px;background:#fff8e9;border:1px solid #f0e2bf;color:#725c2b;font-size:11px;line-height:1.6}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}
+.feature{padding:18px;background:white;border:1px solid var(--line);border-radius:16px}
+.feature b{display:block;font-size:13px;margin:9px 0 5px}
+.feature p{font-size:11px;color:var(--muted);line-height:1.55}
+.footer{text-align:center;color:#819187;font-size:11px;padding:30px 20px}
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#193e2d;color:white;padding:12px 17px;border-radius:10px;font-size:12px;display:none;z-index:5}
+@media(max-width:800px){.layout{grid-template-columns:1fr}.hero{padding-top:40px}.wrap{margin-top:-22px}.result-panel{min-height:400px}.empty{min-height:300px}}
+@media(max-width:520px){.panel{padding:18px}.features{grid-template-columns:1fr}.hero h1{letter-spacing:-1px}}
 </style>
 </head>
+
 <body>
+
 <header class="topbar">
-  <div class="brand"><div class="brand-mark">✿</div><div>हरित साथी <span style="font-weight:500;color:#b9d7c2;font-size:12px">| AI Plant Doctor</span></div></div>
-  <div class="top-right"><span class="live-dot"></span><span class="status-text">AI सहायता प्रणाली</span><span>भारत · कृषि नवाचार</span></div>
+  <div class="brand">
+    <div class="brand-mark">✿</div>
+    <div>हरित साथी <span style="font-weight:500;color:#b9d7c2;font-size:12px">| AI Plant Doctor</span></div>
+  </div>
+  <div class="top-right"><span class="live-dot"></span><span>AI सहायता प्रणाली</span><span>भारत · कृषि नवाचार</span></div>
 </header>
+
 <section class="hero">
   <div class="hero-inner">
     <div class="eyebrow">🌱 स्मार्ट कृषि · स्वस्थ फसल</div>
     <h1>पौधे की बीमारी पहचानें।<br><span>फसल को सुरक्षित बनाएँ।</span></h1>
     <p>पत्ते की एक साफ़ तस्वीर अपलोड करें और AI से संभावित रोग, दिखाई देने वाले लक्षण तथा बचाव के व्यावहारिक सुझाव हिंदी में पाएँ।</p>
-    <div class="hero-tags"><span>✦ AI image analysis</span><span>✦ आसान हिंदी रिपोर्ट</span><span>✦ किसान-केंद्रित जानकारी</span></div>
+    <div class="hero-tags">
+      <span>✦ AI image analysis</span>
+      <span>✦ आसान हिंदी रिपोर्ट</span>
+      <span>✦ किसान-केंद्रित जानकारी</span>
+    </div>
   </div>
 </section>
+
 <main class="wrap">
   <div class="layout">
+
     <section class="panel">
-      <div class="panel-head"><div><div class="step">चरण 01 · तस्वीर दें</div><h2>पौधे की फोटो अपलोड करें</h2><p class="sub">बीमार पत्ती की साफ़, रोशनी में ली गई तस्वीर बेहतर रहेगी।</p></div><span style="font-size:25px">📷</span></div>
+      <div class="panel-head">
+        <div>
+          <div class="step">चरण 01 · तस्वीर दें</div>
+          <h2>पौधे की फोटो अपलोड करें</h2>
+          <p class="sub">बीमार पत्ती की साफ़, रोशनी में ली गई तस्वीर बेहतर रहेगी।</p>
+        </div>
+        <span style="font-size:25px">📷</span>
+      </div>
+
       <label class="upload" id="dropzone" for="photo">
-        <div class="upload-content"><div class="upload-icon">🌿</div><strong>यहाँ फोटो ड्रॉप करें</strong><small>या अपने डिवाइस से तस्वीर चुनें<br>JPG, PNG, WEBP · अधिकतम 8 MB</small><span class="choose">फोटो चुनें</span></div>
-        <img class="preview" id="preview" alt="अपलोड की गई पौधे की तस्वीर">
+        <div class="upload-content">
+          <div class="upload-icon">🌿</div>
+          <strong>यहाँ फोटो ड्रॉप करें</strong>
+          <small>या अपने डिवाइस से तस्वीर चुनें<br>JPG, PNG, WEBP · अधिकतम 8 MB</small>
+          <span class="choose">फोटो चुनें</span>
+        </div>
+        <img class="preview" id="preview" alt="पौधे की तस्वीर">
         <button class="remove" type="button" id="removeBtn">✕ हटाएँ</button>
       </label>
+
       <input id="photo" type="file" accept="image/jpeg,image/png,image/webp" hidden>
-      <div class="field"><label for="plantName">पौधे / फसल का नाम (वैकल्पिक)</label><input id="plantName" type="text" placeholder="जैसे: टमाटर, गेहूँ, मिर्च, सोयाबीन..."><div class="hint">नाम पता न हो तो खाली छोड़ सकते हैं।</div></div>
-      <button class="primary" id="analyzeBtn" disabled>✦ बीमारी की जाँच करें <span>→</span></button>
+
+      <div class="field">
+        <label for="plantName">पौधे / फसल का नाम (वैकल्पिक)</label>
+        <input id="plantName" type="text" placeholder="जैसे: टमाटर, गेहूँ, मिर्च...">
+        <div class="hint">नाम पता न हो तो खाली छोड़ सकते हैं।</div>
+      </div>
+
+      <button class="primary" id="analyzeBtn" disabled>✦ बीमारी की जाँच करें →</button>
       <p class="privacy">🔒 तस्वीर केवल विश्लेषण के लिए AI सेवा को भेजी जाती है। API key सर्वर पर सुरक्षित रहती है।</p>
     </section>
+
     <section class="panel result-panel">
-      <div class="panel-head"><div><div class="step">चरण 02 · AI रिपोर्ट</div><h2>आपकी फसल की स्वास्थ्य रिपोर्ट</h2></div><span style="font-size:25px">📋</span></div>
-      <div class="empty" id="emptyState"><div class="empty-art">🪴</div><h3>आपकी रिपोर्ट यहाँ दिखाई देगी</h3><p>फोटो अपलोड करने के बाद AI पौधे की स्थिति, संभावित बीमारी और देखभाल के सुझाव तैयार करेगा।</p><div class="mini-steps"><span>① फोटो अपलोड</span><span>② AI जाँच</span><span>③ उपाय जानें</span></div></div>
-      <div class="loading" id="loading"><div class="spinner"></div><h3>AI तस्वीर का विश्लेषण कर रहा है…</h3><p>पत्तियों के रंग, धब्बों और लक्षणों को देखा जा रहा है।</p></div>
-     <div class="report" id="report">
-  <div class="report-top">
-    <h3>विश्लेषण पूरा हुआ</h3>
-    <span class="pill">AI REPORT</span>
-  </div>
+      <div class="panel-head">
+        <div>
+          <div class="step">चरण 02 · AI रिपोर्ट</div>
+          <h2>आपकी फसल की स्वास्थ्य रिपोर्ट</h2>
+        </div>
+        <span style="font-size:25px">📋</span>
+      </div>
 
-  <div class="report-body" id="reportText"></div>
+      <div class="empty" id="emptyState">
+        <div class="empty-art">🪴</div>
+        <h3>आपकी रिपोर्ट यहाँ दिखाई देगी</h3>
+        <p>फोटो अपलोड करने के बाद AI पौधे की स्थिति, संभावित बीमारी और देखभाल के सुझाव तैयार करेगा।</p>
+        <div class="mini-steps">
+          <span>① फोटो अपलोड</span>
+          <span>② AI जाँच</span>
+          <span>③ उपाय जानें</span>
+        </div>
+      </div>
 
-  <div class="report-actions">
-  
-    <button class="secondary" id="copyBtn">रिपोर्ट कॉपी करें</button>
-    <button class="secondary" id="againBtn">नई जाँच</button>
-  </div>
-</div>
+      <div class="loading" id="loading">
+        <div class="spinner"></div>
+        <h3>AI तस्वीर का विश्लेषण कर रहा है…</h3>
+        <p>पत्तियों के रंग, धब्बों और लक्षणों को देखा जा रहा है।</p>
+      </div>
+
+      <div class="report" id="report">
+        <div class="report-top">
+          <h3>विश्लेषण पूरा हुआ</h3>
+          <span class="pill">AI REPORT</span>
+        </div>
+
+        <div class="report-body" id="reportText"></div>
+
+        <div class="report-actions">
+          <button class="secondary" id="speakBtn" type="button">🔊 रिपोर्ट सुनें</button>
+          <button class="secondary" id="stopSpeakBtn" type="button">⏹️ आवाज़ बंद करें</button>
+          <button class="secondary" id="copyBtn" type="button">रिपोर्ट कॉपी करें</button>
+          <button class="secondary" id="againBtn" type="button">नई जाँच</button>
+        </div>
+      </div>
     </section>
   </div>
- 
+
   <div class="features">
-    <div class="feature"><div class="ico">🔍</div><b>संभावित रोग की पहचान</b><p>फोटो में दिख रहे लक्षणों के आधार पर AI प्रारंभिक संकेत देता है।</p></div>
-    <div class="feature"><div class="ico">🧑‍🌾</div><b>किसान के लिए सरल उपाय</b><p>सफाई, सिंचाई, देखभाल और रोकथाम के सुझाव आसान भाषा में।</p></div>
-    <div class="feature"><div class="ico">🇮🇳</div><b>स्थानीय भाषा में सहायता</b><p>रिपोर्ट हिंदी में, ताकि जानकारी समझना और साझा करना आसान हो।</p></div>
+    <div class="feature"><div>🔍</div><b>संभावित रोग की पहचान</b><p>फोटो में दिख रहे लक्षणों के आधार पर AI प्रारंभिक संकेत देता है।</p></div>
+    <div class="feature"><div>🧑‍🌾</div><b>किसान के लिए सरल उपाय</b><p>सफाई, सिंचाई, देखभाल और रोकथाम के सुझाव आसान भाषा में।</p></div>
+    <div class="feature"><div>🇮🇳</div><b>स्थानीय भाषा में सहायता</b><p>रिपोर्ट हिंदी में, ताकि जानकारी समझना और साझा करना आसान हो।</p></div>
   </div>
-  <div class="notice"><b>महत्वपूर्ण सूचना:</b> यह AI-आधारित प्रारंभिक सहायता और प्रदर्शन प्रोटोटाइप है, प्रमाणित कृषि निदान नहीं। केवल फोटो से रोग की पक्की पुष्टि संभव नहीं होती। किसी भी दवा/कीटनाशक का उपयोग करने से पहले कृषि विज्ञान केंद्र (KVK) या कृषि विशेषज्ञ से सलाह लें और उत्पाद के लेबल का पालन करें।</div>
+
+  <div class="notice">
+    <b>महत्वपूर्ण सूचना:</b> यह AI-आधारित प्रारंभिक सहायता और प्रदर्शन प्रोटोटाइप है, प्रमाणित कृषि निदान नहीं। केवल फोटो से रोग की पक्की पुष्टि संभव नहीं होती। किसी भी दवा/कीटनाशक का उपयोग करने से पहले कृषि विज्ञान केंद्र (KVK) या कृषि विशेषज्ञ से सलाह लें।
+  </div>
 </main>
+
 <footer class="footer">हरित साथी · AI Plant Doctor | कृषि में तकनीक, किसानों के साथ</footer>
 <div class="toast" id="toast"></div>
+
 <script>
-// अपना Cloudflare Worker URL यहाँ डालें — Groq API key यहाँ कभी न डालें।
+// Cloudflare Worker URL
 const API_URL = "https://harit-saathi-api.rajeshkumarmahra4.workers.dev";
 
-const photoInput=document.getElementById('photo'), dropzone=document.getElementById('dropzone'), preview=document.getElementById('preview'), analyzeBtn=document.getElementById('analyzeBtn');
-const emptyState=document.getElementById('emptyState'), loading=document.getElementById('loading'), report=document.getElementById('report'), reportText=document.getElementById('reportText');
-// हिंदी रिपोर्ट सुनाने की सुविधा
+const photoInput = document.getElementById('photo');
+const dropzone = document.getElementById('dropzone');
+const preview = document.getElementById('preview');
+const analyzeBtn = document.getElementById('analyzeBtn');
+
+const emptyState = document.getElementById('emptyState');
+const loading = document.getElementById('loading');
+const report = document.getElementById('report');
+const reportText = document.getElementById('reportText');
+
+let selectedFile = null;
+
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.style.display = 'block';
+  setTimeout(() => t.style.display = 'none', 2800);
+}
+
+// फोटो चुनना और दिखाना
+function setFile(file) {
+  if (!file) return;
+
+  if (!['image/jpeg','image/png','image/webp'].includes(file.type)) {
+    toast('कृपया JPG, PNG या WEBP फोटो चुनें।');
+    return;
+  }
+
+  if (file.size > 8 * 1024 * 1024) {
+    toast('फोटो 8 MB से छोटी होनी चाहिए।');
+    return;
+  }
+
+  selectedFile = file;
+  preview.src = URL.createObjectURL(file);
+  dropzone.classList.add('has-image');
+  analyzeBtn.disabled = false;
+}
+
+photoInput.addEventListener('change', e => {
+  setFile(e.target.files[0]);
+});
+
+// फोटो हटाना
+document.getElementById('removeBtn').addEventListener('click', e => {
+  e.preventDefault();
+  e.stopPropagation();
+
+  selectedFile = null;
+  photoInput.value = '';
+  preview.src = '';
+  dropzone.classList.remove('has-image');
+  analyzeBtn.disabled = true;
+});
+
+// Drag and drop
+['dragenter','dragover'].forEach(ev => {
+  dropzone.addEventListener(ev, e => {
+    e.preventDefault();
+    dropzone.classList.add('drag');
+  });
+});
+
+['dragleave','drop'].forEach(ev => {
+  dropzone.addEventListener(ev, e => {
+    e.preventDefault();
+    dropzone.classList.remove('drag');
+  });
+});
+
+dropzone.addEventListener('drop', e => {
+  setFile(e.dataTransfer.files[0]);
+});
+
+// रिपोर्ट सुनाना
 document.getElementById('speakBtn').addEventListener('click', () => {
   const text = reportText.textContent.trim();
 
@@ -85,7 +288,7 @@ document.getElementById('speakBtn').addEventListener('click', () => {
     return;
   }
 
-  if (!window.speechSynthesis) {
+  if (!('speechSynthesis' in window)) {
     toast('आपका ब्राउज़र आवाज़ की सुविधा नहीं देता।');
     return;
   }
@@ -98,50 +301,108 @@ document.getElementById('speakBtn').addEventListener('click', () => {
   speech.pitch = 1;
 
   const voices = window.speechSynthesis.getVoices();
-  const hindiVoice = voices.find(v => v.lang.toLowerCase().startsWith('hi'));
+  const hindiVoice = voices.find(v =>
+    v.lang && v.lang.toLowerCase().startsWith('hi')
+  );
 
   if (hindiVoice) {
     speech.voice = hindiVoice;
   }
 
-  speech.onerror = (event) => {
+  speech.onstart = () => {
+    console.log('रिपोर्ट पढ़ना शुरू हुआ');
+  };
+
+  speech.onerror = event => {
     toast('आवाज़ में समस्या: ' + event.error);
   };
 
   window.speechSynthesis.speak(speech);
 });
 
+// आवाज़ बंद करना
 document.getElementById('stopSpeakBtn').addEventListener('click', () => {
   window.speechSynthesis.cancel();
   toast('आवाज़ बंद कर दी गई।');
 });
+
+// Loading
+function showLoading() {
+  emptyState.style.display = 'none';
+  report.style.display = 'none';
+  loading.style.display = 'block';
+}
+
+function showError(message) {
+  loading.style.display = 'none';
+  emptyState.style.display = 'flex';
+  toast(message);
+}
+
+// AI बीमारी जाँच
+analyzeBtn.addEventListener('click', async () => {
+  if (!selectedFile) {
+    toast('पहले पौधे की फोटो चुनें।');
+    return;
+  }
+
+  showLoading();
+  analyzeBtn.disabled = true;
+
+  try {
+    const dataUrl = await new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => resolve(reader.result);
+      reader.onerror = reject;
+      reader.readAsDataURL(selectedFile);
+    });
+
+    const response = await fetch(
+      API_URL.replace(/\/$/, '') + '/analyze',
+      {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+          image: dataUrl,
+          plantName: document.getElementById('plantName').value.trim()
+        })
+      }
+    );
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      throw new Error(data.error || 'विश्लेषण नहीं हो पाया।');
+    }
+
+    reportText.textContent = data.report || 'कोई रिपोर्ट प्राप्त नहीं हुई।';
+
+    loading.style.display = 'none';
+    report.style.display = 'block';
+
+  } catch (err) {
+    showError(err.message || 'कनेक्शन में समस्या है। इंटरनेट जाँचें।');
+  } finally {
+    analyzeBtn.disabled = !selectedFile;
+  }
+});
+
+// रिपोर्ट कॉपी
+document.getElementById('copyBtn').addEventListener('click', async () => {
+  try {
+    await navigator.clipboard.writeText(reportText.textContent);
+    toast('रिपोर्ट कॉपी हो गई।');
+  } catch (e) {
+    toast('कॉपी नहीं हो सकी।');
+  }
+});
+
+// नई जाँच
+document.getElementById('againBtn').addEventListener('click', () => {
   window.speechSynthesis.cancel();
-  toast('आवाज़ बंद कर दी गई।');
+  report.style.display = 'none';
+  emptyState.style.display = 'flex';
 });
-function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.style.display='block';setTimeout(()=>t.style.display='none',2800)}
-function setFile(file){if(!file)return;if(!['image/jpeg','image/png','image/webp'].includes(file.type)){toast('कृपया JPG, PNG या WEBP फोटो चुनें।');return}if(file.size>8*1024*1024){toast('फोटो 8 MB से छोटी होनी चाहिए।');return}selectedFile=file;preview.src=URL.createObjectURL(file);dropzone.classList.add('has-image');analyzeBtn.disabled=false}
-photoInput.addEventListener('change',e=>setFile(e.target.files[0]));
-document.getElementById('removeBtn').addEventListener('click',e=>{e.preventDefault();e.stopPropagation();selectedFile=null;photoInput.value='';preview.src='';dropzone.classList.remove('has-image');analyzeBtn.disabled=true});
-['dragenter','dragover'].forEach(ev=>dropzone.addEventListener(ev,e=>{e.preventDefault();dropzone.classList.add('drag')}));
-['dragleave','drop'].forEach(ev=>dropzone.addEventListener(ev,e=>{e.preventDefault();dropzone.classList.remove('drag')}));
-dropzone.addEventListener('drop',e=>setFile(e.dataTransfer.files[0]));
-function showLoading(){emptyState.style.display='none';report.style.display='none';loading.style.display='block'}
-function showError(message){loading.style.display='none';emptyState.style.display='flex';toast(message)}
-analyzeBtn.addEventListener('click',async()=>{
- if(!selectedFile)return;
- if(API_URL.includes('PASTE_YOUR')){toast('पहले index.html में Worker URL डालें।');return}
- showLoading();analyzeBtn.disabled=true;
- try{
-  const dataUrl=await new Promise((resolve,reject)=>{const r=new FileReader();r.onload=()=>resolve(r.result);r.onerror=reject;r.readAsDataURL(selectedFile)});
-  const res=await fetch(API_URL.replace(/\/$/,'')+'/analyze',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({image:dataUrl,plantName:document.getElementById('plantName').value.trim()})});
-  const data=await res.json();
-  if(!res.ok)throw new Error(data.error||'विश्लेषण नहीं हो पाया।');
-  reportText.textContent=data.report||'कोई रिपोर्ट प्राप्त नहीं हुई।';loading.style.display='none';report.style.display='block';
- }catch(err){showError(err.message||'कनेक्शन में समस्या है। Worker URL और इंटरनेट जाँचें।')}
- finally{analyzeBtn.disabled=!selectedFile}
-});
-document.getElementById('copyBtn').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(reportText.textContent);toast('रिपोर्ट कॉपी हो गई।')}catch(e){toast('कॉपी नहीं हो सकी।')}});
-document.getElementById('againBtn').addEventListener('click',()=>{report.style.display='none';emptyState.style.display='flex';});
 </script>
 </body>
 </html>
